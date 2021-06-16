@@ -1,0 +1,16 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #aaaaaa;
+  text-align: left;
+  padding: 8px;
+}
+
+/* cambia el color por cada fila impar */
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
