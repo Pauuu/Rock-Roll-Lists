@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --first-color: rgb(249, 225, 255);
+  --second-color: hsl(-74, 70%, 70%);
+  --third-color: hsl(-76, 50%, 50%);
+  --fourth-color: hsl(-78, 70%, 30%);
+  --fifth-color: hsl(-80, 90%, 10%);
+}
+
+html {
+  background-color: var(--first-color);
+}

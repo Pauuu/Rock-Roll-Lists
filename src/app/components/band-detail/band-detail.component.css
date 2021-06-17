@@ -1,0 +1,59 @@
+div > div {
+  margin: 1rem;
+}
+
+#video-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#video-container iframe,
+#video-container embed,
+#video-container object {
+  position: relative;
+  width: 1000px;
+  height: 600px;
+}
+
+@media screen and (max-width: 900px) and (min-width: 720px) and (orientation: landscape) {
+  #video-container iframe,
+  #video-container embed,
+  #video-container object {
+    position: relative;
+    width: 800px;
+    height: 460px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  #video-container iframe,
+  #video-container embed,
+  #video-container object {
+    position: relative;
+    width: 400px;
+    height: 230px;
+  }
+}
+
+p {
+  font-size: large;
+}
+
+#main {
+  display: grid;
+  justify-content: center;
+}
+
+#name {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--fourth-color);
+  color: var(--first-color);
+  border-radius: 0.5rem;
+}
+
+#video {
+  display: flex;
+  justify-content: center;
+}

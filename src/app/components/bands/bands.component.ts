@@ -12,4 +12,6 @@ export class BandsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+
 }
