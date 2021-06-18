@@ -11,8 +11,8 @@ import { BandDetailComponent } from './components/band-detail/band-detail.compon
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 // Services
-import { InMemoryDataService } from './services/in-memory-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.

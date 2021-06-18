@@ -21,6 +21,4 @@ export class BandsComponent implements OnInit {
       .subscribe(bands => this.bands = bands);
   }
 
-
-
 }
