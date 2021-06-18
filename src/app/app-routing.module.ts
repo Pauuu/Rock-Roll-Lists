@@ -5,7 +5,7 @@ import { BandsComponent } from './components/bands/bands.component';
 
 const routes: Routes = [
   // TODO: cambiar la ruta por defecto
-  {path: '', redirectTo: '/bandDetail/1', pathMatch: 'full'},
+  {path: '', redirectTo: 'bands', pathMatch: 'full'},
   {path: 'bands', component: BandsComponent},
   {path: 'bandDetail/:id', component: BandDetailComponent}
 ];

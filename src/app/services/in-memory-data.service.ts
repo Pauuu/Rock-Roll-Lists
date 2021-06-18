@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { InMemoryDbService, RequestInfo } from 'angular-in-memory-web-api';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Band } from '../models/band';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { Band } from '../models/band';
 })
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    const bands: Band[] = [
+    const bands = [
       {
         id: 1,
         name: 'The Rolling Stones',
@@ -31,7 +31,6 @@ export class InMemoryDataService implements InMemoryDbService {
         video: 'https://www.youtube.com/watch?v=YR5ApYxkU-U'
       }
     ];
-
     return { bands };
   }
 

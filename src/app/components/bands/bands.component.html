@@ -8,16 +8,10 @@
             <th>Bands</th>
         </tr>
 
-        <tr>
-            <td routerLink="/bandDetail/1">
-                <p>The Rolling Stones</p>
+        <tr *ngFor="let band of bands">
+            <td routerLink="/bandDetail/{{band.id}}">
+                <p>{{band.name}}</p>
                 <img class="logo" src="../../../assets/rolling-stones.jpeg" alt="logo of the rolling stones band.">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <p>Led Zeppelin</p>
-                <img class="logo" src="../../../assets/led-zeppeil.jpeg" alt="led zeppelin cover" srcset="">
             </td>
         </tr>
     </table>
