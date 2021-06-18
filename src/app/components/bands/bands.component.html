@@ -1,8 +1,4 @@
-<!-- 
-            TODO
-    - poner el foreach
- -->
-<div>
+<div id="main">
     <table>
         <tr>
             <th>Bands</th>
@@ -10,8 +6,8 @@
 
         <tr *ngFor="let band of bands">
             <td routerLink="/bandDetail/{{band.id}}">
-                <p>{{band.name}}</p>
                 <img class="logo" src="../../../assets/rolling-stones.jpeg" alt="logo of the rolling stones band.">
+                <p> {{band.name}}</p>
             </td>
         </tr>
     </table>
