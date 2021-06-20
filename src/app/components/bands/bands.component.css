@@ -16,6 +16,7 @@ td {
 
 td:hover {
   background-color: var(--third-color);
+  cursor: pointer;
 }
 
 th {

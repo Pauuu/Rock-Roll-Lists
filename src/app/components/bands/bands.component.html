@@ -8,6 +8,9 @@
             <td routerLink="/bandDetail/{{band.id}}">
                 <img class="logo" src="../../../assets/rolling-stones.jpeg" alt="logo of the rolling stones band.">
                 <p> {{band.name}}</p>
+                <button (click)=delete(band) id="delete">
+                    DELETE
+                </button>
             </td>
         </tr>
     </table>
