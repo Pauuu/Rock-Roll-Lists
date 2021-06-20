@@ -1,1 +1,12 @@
-<p>search-bar works!</p>
+<div>
+  <!-- <label for="search-box">Band Search</label> -->
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="Band Search" />
+
+  <ul class="search-result">
+    <li *ngFor="let band of bands$ | async">
+      <a routerLink="/bandDetail/{{band.id}}">
+        {{band.name}}
+      </a>
+    </li>
+  </ul>
+</div>

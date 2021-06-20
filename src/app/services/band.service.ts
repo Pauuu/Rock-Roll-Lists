@@ -57,6 +57,20 @@ export class BandService {
   }
 
   /**
+   * Returns an array with the bands that matched the name
+   * @param text Name of the band(s)
+   * @returns Observable of the array of the bands
+   */
+  searchBands(text: string): Observable<Band[]> {
+    if (!text.trim()) return of([]);  //======== no text ==========>
+
+    return this.http.get<Band[]>(`${this.url}/?name=${text}`)
+      .pipe(
+        catchError(this.handleError<Band[]>('searchBands', []))
+      );
+  }
+
+  /**
  * Handle Http operation that failed.
  * 
  * @param operation - name of the operation that failed
