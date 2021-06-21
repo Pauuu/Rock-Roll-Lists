@@ -1,0 +1,17 @@
+<div id="main">
+  <div id="name">
+    <input required #bandName type="text" size="50" name="modifyName" id="modify-name">
+  </div>
+
+  <div id="video-container">
+    <input #bandVideo type="text" size="50" name="videoUrl" id="video-url">
+  </div>
+
+  <div id="info">
+    <!--TODO: cambiar el ancho del textarea dependiendo el dispositivo  -->
+    <textarea #bandInfo required name="bandInfo" id="band-info" cols="100" rows="10"></textarea>
+  </div>
+
+  <button (click)="save(bandName.value, bandInfo.value, bandVideo.value)" id="save">Save</button>
+  <button (click)="cancel()" id="cancel">Cancel</button>
+</div>

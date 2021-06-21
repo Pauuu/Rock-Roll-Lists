@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { BandService } from 'src/app/services/band.service';
 import { Band } from '../../models/band';
 
@@ -16,6 +17,7 @@ export class BandsComponent implements OnInit {
    * get all the bands from the start of the page
    */
   ngOnInit(): void {
+    console.log("hola");
     this.getBands();
   }
 

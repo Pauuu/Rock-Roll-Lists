@@ -18,15 +18,22 @@ export class BandService {
 
   constructor(private http: HttpClient) { }
 
+  addBand(band: Band) :Observable<Band>{
+    return this.http.post<Band>(this.url, band, this.httpOptions)
+    .pipe(
+      catchError(this.handleError<Band>('addBand'))
+    );
+  }
+
   /**
    * 
    * @param id id of the band
    * @returns Observable of the band to be deleted 
    */
   deleteBand(id: number): Observable<Band> {
-    const url = `${this.url}/${id}`;
+    const bandUrl = `${this.url}/${id}`;
 
-    return this.http.delete<Band>(url, this.httpOptions)
+    return this.http.delete<Band>(bandUrl, this.httpOptions)
       .pipe(
         catchError(this.handleError<Band>('deleteBand'))
       );
