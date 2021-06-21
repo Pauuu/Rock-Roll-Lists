@@ -12,6 +12,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: 1,
         name: 'The Rolling Stones',
         info: 'las rocas que ruedan',
+        video: 'https://www.youtube.com/watch?v=YzjZEci-EiU'
       },
       {
         id: 2,

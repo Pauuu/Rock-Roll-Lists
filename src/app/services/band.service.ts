@@ -56,6 +56,14 @@ export class BandService {
       );
   }
 
+  modifyBand(band: Band): Observable<any> {
+    const bandsUrl = "api/bands";
+    return this.http.put(bandsUrl, band, this.httpOptions)
+    .pipe(
+      catchError(this.handleError<any>("modifyBand"))
+    );
+  }
+
   /**
    * Returns an array with the bands that matched the name
    * @param text Name of the band(s)

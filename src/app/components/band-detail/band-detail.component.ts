@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Band } from 'src/app/models/band';
 import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser'
+
+import { Band } from 'src/app/models/band';
 import { BandService } from 'src/app/services/band.service';
 
 @Component({
@@ -10,9 +12,12 @@ import { BandService } from 'src/app/services/band.service';
 })
 export class BandDetailComponent implements OnInit {
 
+  modifying: boolean = false; // if the page it's been modifying or not
+
   constructor(
     private route: ActivatedRoute,
-    private bandService: BandService
+    private bandService: BandService,
+    private domSanitazer: DomSanitizer
   ) { }
 
   /**
@@ -33,6 +38,48 @@ export class BandDetailComponent implements OnInit {
   getBand(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.bandService.getBand(id).subscribe(band => this.band = band);
+  }
+
+  /**
+   * Toggles the modification attribute to true
+   */
+  modify(): void {
+    this.modifying = true;
+  }
+
+  /**
+   * Toggles the modification attribute to false
+   */
+  cancel(): void {
+    this.modifying = false;
+  }
+
+  /**
+   * Checks if band has video url and displays.
+   * 
+   * @returns video sfe url to be displayed
+   */
+  getEmbedUrl(): SafeResourceUrl {
+    if (this.band?.video) {
+      return this.domSanitazer.bypassSecurityTrustResourceUrl(
+        this.band.video
+      );
+    }
+
+    return "";
+  }
+
+  /**
+   * Toggles the modification attribute to false and 
+   * updates the band information of the db
+   */
+  save(): void {
+    this.modifying = false;
+
+    if (this.band) {
+      this.bandService.modifyBand(this.band)
+        .subscribe();
+    }
   }
 
 }

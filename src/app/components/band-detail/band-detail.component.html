@@ -1,31 +1,38 @@
-<div *ngIf="band" id="main">
+<div *ngIf="band && !modifying" id="main">
     <div id="name">
         <h1>
             {{band.name}}
         </h1>
+        <button (click)="modify()" id="modify">Modify</button>
     </div>
-    <div id="video-container">
-        <iframe  src="https://www.youtube.com/embed/89b70pXLEzg" title="YouTube video player"
+
+    <div *ngIf="band.video" id="video-container">
+        <iframe [src]="getEmbedUrl()" title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
         </iframe>
-
     </div>
+
     <div id="info">
-
-
-        <p>Lorem fistrum condemor a peich a wan te va a hasé pupitaa jarl papaar papaar papaar papaar va usté muy
-            cargadoo
-            ese que llega mamaar. A peich te va a hasé pupitaa no puedor caballo blanco caballo negroorl quietooor hasta
-            luego Lucas te voy a borrar el cerito llevame al sircoo no puedor. Te voy a borrar el cerito diodeno por la
-            gloria de mi madre la caidita al ataquerl pecador diodeno hasta luego Lucas va usté muy cargadoo no puedor.
-            Pupita de la pradera jarl se calle ustée me cago en tus muelas llevame al sircoo no te digo trigo por no
-            llamarte Rodrigor. Está la cosa muy malar ese hombree ahorarr al ataquerl a peich. Sexuarl por la gloria de
-            mi
-            madre te va a hasé pupitaa condemor quietooor la caidita me cago en tus muelas va usté muy cargadoo ahorarr.
-            Sexuarl llevame al sircoo a gramenawer condemor pecador te va a hasé pupitaa papaar papaar amatomaa
-            quietooor
-            caballo blanco caballo negroorl.</p>
+        <p>{{band.info}}</p>
     </div>
+</div>
+
+<div *ngIf="band && modifying" id="main">
+    <div id="name">
+        <input [(ngModel)]="band.name" type="text" size="50" name="modifyName" id="modify-name">
+    </div>
+
+    <div id="video-container">
+        <input [(ngModel)]="band.video" type="text" size="50" name="videoUrl" id="video-url">
+    </div>
+
+    <div id="info">
+         <!--TODO: cambiar el ancho del textarea dependiendo el dispositivo  -->
+        <textarea [(ngModel)]="band.info" name="bandInfo" id="band-info" cols="100" rows="10"></textarea>
+    </div>
+
+    <button (click)="save()" id="save">Save</button>
+    <button (click)="cancel()" id="cancel">Cancel</button>
 </div>
