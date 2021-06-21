@@ -1,8 +1,20 @@
 <app-search-bar></app-search-bar>
 <div id="main">
-    <Button routerLink="/bandNew" >Add Band</Button>
+    <Button routerLink="/bandNew">Add Band</Button>
 
-    <table>
+    <div id="bands">
+        <div *ngFor="let band of bands" class="card" routerLink="/bandDetail/{{band.id}}">
+            <div class="container-img">
+                <img class="logo" src="../../../assets/rolling-stones.jpeg" alt="logo of the rolling stones band.">
+            </div>
+            <div class="container-info">
+                <p> {{band.name}}</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <table>
         <tr>
             <th>Bands</th>
         </tr>
@@ -16,5 +28,5 @@
                 </button>
             </td>
         </tr>
-    </table>
+    </table> -->
 </div>

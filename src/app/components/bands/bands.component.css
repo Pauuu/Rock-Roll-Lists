@@ -1,57 +1,46 @@
 p {
-  font-size: large;
-  margin-left: 2rem;
+  font-size: 1.4rem;
+  text-align: center;
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
+.card {
+  border: 1px solid var(--fourth-color);
+  border-radius: 6px;
 }
 
-td {
-  display: flex;
-  text-align: left;
-  padding: 8px;
-}
-
-td:hover {
-  background-color: var(--third-color);
+.card:hover {
+  background-color: var(--second-color);
   cursor: pointer;
 }
 
-th {
-  text-align: center;
-  padding: 3rem;
-  font-size: 60px;
-  font-weight: 700;
-}
-
-tr {
-  border-bottom: 1px solid var(--fifth-color);
-}
-
-tr:last-child,
-tr:first-child {
-  border-bottom: none;
-}
-
-/* cambia el color de cada fila impar */
-tr:nth-child(even) {
-  border-radius: 1rem;
-  background-color: var(--second-color);
+.container-img {
+  display: flex;
+  justify-content: center;
 }
 
 .logo {
-  position: relative;
-  display: inline-block;
   width: 5rem;
-  margin: 5px;
 
   border: solid 1px black;
-  border-radius: 10px;
+  border-radius: 6px;
+}
+
+#bands {
+  display: grid;
+  
+  /*
+  * the minimum size of the colums is 150px and each card element will 
+  * occupy 1fr of the grid.
+  * The 'auto-fill' will put elements down in order to not
+  * squeeze each one into another
+  */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 5%;
+  margin-top: 2rem;
 }
 
 #main {
-  margin-left: 6rem;
-  margin-right: 6rem;
+  margin-top: 3rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
