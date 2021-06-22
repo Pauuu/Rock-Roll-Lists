@@ -3,7 +3,7 @@
     <Button routerLink="/bandNew">Add Band</Button>
 
     <div id="bands">
-        <div *ngFor="let band of bands" class="card" routerLink="/bandDetail/{{band.id}}">
+        <div *ngFor="let band of bands" class="card" routerLink="/bands/{{band.id}}">
             <div class="container-img">
                 <img class="logo" src="../../../assets/rolling-stones.jpeg" alt="logo of the rolling stones band.">
             </div>
@@ -13,20 +13,4 @@
 
         </div>
     </div>
-
-    <!-- <table>
-        <tr>
-            <th>Bands</th>
-        </tr>
-
-        <tr *ngFor="let band of bands">
-            <td routerLink="/bandDetail/{{band.id}}">
-                <img class="logo" src="../../../assets/rolling-stones.jpeg" alt="logo of the rolling stones band.">
-                <p> {{band.name}}</p>
-                <button (click)=delete(band) id="delete">
-                    DELETE
-                </button>
-            </td>
-        </tr>
-    </table> -->
 </div>

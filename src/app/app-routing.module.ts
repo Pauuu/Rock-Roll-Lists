@@ -8,7 +8,7 @@ const routes: Routes = [
   // TODO: cambiar la ruta por defecto
   {path: '', redirectTo: 'bands', pathMatch: 'full'},
   {path: 'bands', component: BandsComponent},
-  {path: 'bandDetail/:id', component: BandDetailComponent},
+  {path: 'bands/:id', component: BandDetailComponent},
   {path: 'bandNew', component: BandNewComponent}
 ];
 
