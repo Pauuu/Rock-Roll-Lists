@@ -1,0 +1,12 @@
+input {
+  width: 80vw;
+  padding: 15px 22px;
+  margin: 10px 5px;
+  border: solid 1px var(--second-color);
+}
+
+#main {
+  background-color: var(--second-color);
+  padding: 2%;
+}
+

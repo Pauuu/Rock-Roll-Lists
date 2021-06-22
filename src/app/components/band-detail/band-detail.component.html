@@ -3,12 +3,10 @@
         <h1>
             {{band.name}}
         </h1>
-        <button (click)="modify()" id="modify">Modify</button>
     </div>
 
     <div *ngIf="band.video" id="video-container">
-        <iframe [src]="getEmbedUrl()" title="YouTube video player"
-            frameborder="0"
+        <iframe [src]="getEmbedUrl()" title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
         </iframe>
@@ -17,22 +15,26 @@
     <div id="info">
         <p>{{band.info}}</p>
     </div>
+    <button (click)="modify()" id="modify">Modify</button>
+
 </div>
 
 <div *ngIf="band && modifying" id="main">
     <div id="name">
-        <input [(ngModel)]="band.name" type="text" size="50" name="modifyName" id="modify-name">
+        <input [(ngModel)]="band.name" placeholder="Name" type="text" size="50" name="modifyName" id="modify-name">
     </div>
 
     <div id="video-container">
-        <input [(ngModel)]="band.video" type="text" size="50" name="videoUrl" id="video-url">
+        <input [(ngModel)]="band.video" placeholder="Video url" type="text" size="50" name="videoUrl" id="video-url">
     </div>
 
     <div id="info">
-         <!--TODO: cambiar el ancho del textarea dependiendo el dispositivo  -->
-        <textarea [(ngModel)]="band.info" name="bandInfo" id="band-info" cols="100" rows="10"></textarea>
+        <textarea [(ngModel)]="band.info" placeholder="information" name="bandInfo" id="band-info" cols="100"
+            rows="10"></textarea>
     </div>
 
-    <button (click)="save()" id="save">Save</button>
-    <button (click)="cancel()" id="cancel">Cancel</button>
+    <div id="buttons">
+        <button (click)="save()" id="save">Save</button>
+        <button (click)="cancel()" id="cancel">Cancel</button>
+    </div>
 </div>

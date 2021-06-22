@@ -5,9 +5,31 @@
   --third-color: #40bfbf ;
   --fourth-color: #178282;
   --fifth-color: #033030;
+
+  --red: #FFEBEE;
+  --green: #E8F5E9;
+  --blue: #e0f7fa;
 }
 
 html {
   background-color: var(--first-color);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+  width: 80vw;
+  padding: 15px 22px;
+  margin: 10px 5px;
+  border: solid 1px var(--second-color);
+}
+
+button{
+  border: solid 1px var(--second-color);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 2px;
+}
+
+button:hover {
+  cursor: pointer;
 }

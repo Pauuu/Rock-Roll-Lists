@@ -1,5 +1,34 @@
-div > div {
+button {
+  width: 1;
+}
+
+div {
   margin: 1rem;
+}
+
+input {
+  width: 60vw;
+  padding: 15px 22px;
+  margin: 10px 5px;
+  border: solid 1px var(--second-color);
+}
+
+p {
+  font-size: large;
+}
+
+textarea {
+  width: 80vw;
+  padding: 15px 15px;
+  margin-left: 4vw;
+
+  font-size: large;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
 }
 
 #video-container {
@@ -26,31 +55,56 @@ div > div {
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 700px) {
   #video-container iframe,
   #video-container embed,
   #video-container object {
     position: relative;
-    width: 400px;
+    width: 350px;
     height: 230px;
+  }
+
+  texarea {
+    width: 30vw;
   }
 }
 
-p {
-  font-size: large;
+#info {
+  display: flex;
 }
 
 #main {
   display: grid;
   justify-content: center;
+  margin: 10px;
+}
+
+#modify {
+  width: 150px;
+  margin: 10px
 }
 
 #name {
   text-align: center;
-  padding: 1.5rem;
+  padding: 1.2rem;
   background-color: var(--fourth-color);
   color: var(--first-color);
   border-radius: 0.5rem;
+}
+
+#save,
+#cancel {
+  width: 150px;
+  margin: 10px;
+  justify-self: center;
+}
+
+#save {
+  background-color: var(--green);
+}
+
+#cancel {
+  background-color: var(--red);
 }
 
 #video {
