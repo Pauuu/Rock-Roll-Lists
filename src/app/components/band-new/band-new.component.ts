@@ -3,7 +3,6 @@ import { Location } from '@angular/common';
 
 import { Band } from 'src/app/models/band';
 import { BandService } from 'src/app/services/band.service';
-import { BandDetailComponent } from '../band-detail/band-detail.component';
 
 @Component({
   selector: 'app-band-new',

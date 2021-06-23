@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser'
+import { Location } from '@angular/common';
+
 
 import { Band } from 'src/app/models/band';
 import { BandService } from 'src/app/services/band.service';
@@ -17,7 +19,8 @@ export class BandDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private bandService: BandService,
-    private domSanitazer: DomSanitizer
+    private domSanitazer: DomSanitizer,
+    private location: Location
   ) { }
 
   /**
@@ -30,6 +33,13 @@ export class BandDetailComponent implements OnInit {
    */
   ngOnInit(): void {
     this.getBand();
+  }
+
+  /**
+   * Goes back to the previous url
+   */
+  goBack(){
+    this.location.back();
   }
 
   /**
